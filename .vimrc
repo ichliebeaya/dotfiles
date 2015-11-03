@@ -7,7 +7,6 @@ if has('vim_starting')
       call neobundle#begin(expand('~/.vim/bundle/'))
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
-      NeoBundle 'davidhalter/jedi-vim'
       NeoBundle 'kevinw/pyflakes-vim'
       NeoBundle 'nathanaelkane/vim-indent-guides'
       call neobundle#end()
@@ -36,3 +35,23 @@ set shiftwidth=2
 "vim-indent-guides
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
+"jedi-vim
+
+"disable syntastic
+NeoBundleLazy "davidhalter/jedi-vim", {
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"],
+      \ },
+      \ "build": {
+      \   "mac": "pip install jedi",
+      \   "unix": "pip install jedi",
+      \ }}
+let s:hooks = neobundle#get_hooks("jedi-vim")
+function! s:hooks.on_source(bundle)
+endfunction
+
+let g:syntastic_mode_map = {
+            \ 'mode': 'active',
+            \ 'active_filetypes': ['php', 'coffeescript', 'sh', 'vim'],
+            \ 'passive_filetypes': ['html', 'haskell', 'python']
+            \}

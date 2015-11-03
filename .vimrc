@@ -8,6 +8,8 @@ if has('vim_starting')
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
       NeoBundle 'davidhalter/jedi-vim'
+      NeoBundle 'kevinw/pyflakes-vim'
+      NeoBundle 'nathanaelkane/vim-indent-guides'
       call neobundle#end()
       NeoBundleCheck
 filetype plugin indent on

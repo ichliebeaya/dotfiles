@@ -1,3 +1,15 @@
+set nocompatible
+if has('vim_starting')
+   " 初回起動時のみruntimepathにneobundleのパスを指定する
+      set runtimepath+=~/.vim/bundle/neobundle.vim/
+      endif
+      " NeoBundleを初期化
+      call neobundle#begin(expand('~/.vim/bundle/'))
+      NeoBundle 'Shougo/unite.vim'
+      NeoBundle 'Shougo/vimfiler'
+      call neobundle#end()
+      NeoBundleCheck
+filetype plugin indent on
 set autoindent
 set expandtab
 syntax on

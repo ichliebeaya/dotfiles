@@ -7,6 +7,7 @@ if has('vim_starting')
       call neobundle#begin(expand('~/.vim/bundle/'))
       NeoBundle 'Shougo/unite.vim'
       NeoBundle 'Shougo/vimfiler'
+      NeoBundle 'davidhalter/jedi-vim'
       call neobundle#end()
       NeoBundleCheck
 filetype plugin indent on

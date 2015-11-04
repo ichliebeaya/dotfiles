@@ -55,3 +55,7 @@ let g:syntastic_mode_map = {
             \ 'active_filetypes': ['php', 'coffeescript', 'sh', 'vim'],
             \ 'passive_filetypes': ['html', 'haskell', 'python']
             \}
+"Vim括弧補完
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
